@@ -10,7 +10,9 @@ class Home extends ST_Controller {
 	}
 	
 	public function index()
-	{	//$this->output->enable_profiler(TRUE);
+	{	
+		
+		//$this->output->enable_profiler(TRUE);
 		
 		//List program by category featured
 		$featured_program = $this->Master_mod->result_category();
@@ -90,5 +92,9 @@ class Home extends ST_Controller {
 		$this->output->set_header("Pragma: no-cache");
 		$this->output->set_header("Expires: Sat, 26 Jul 1997 05:00:00 GMT");
 		redirect();
+	}
+
+	public function housekeeper(){
+		$this->Master_mod->emptyLog();
 	}
 }
